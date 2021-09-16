@@ -1,5 +1,5 @@
 import express from "express" 
-import fs from "fs" 
+import fs from "fs-extra"
 import { fileURLToPath } from "url" 
 import { dirname, join } from "path" 
 import uniqid from "uniqid" 
@@ -10,7 +10,7 @@ const currentFilePath = fileURLToPath(import.meta.url)
 
 const currentDirPath = dirname(currentFilePath)
 
-const postsJSONFilePath = join(currentDirPath, "posts.json")
+const postsJSONFilePath = join(currentDirPath, "../data")
 
 // 1. get all the post
 postsRouter.get('/' ,(req ,resp) =>{
