@@ -10,7 +10,7 @@ const currentFilePath = fileURLToPath(import.meta.url)
 
 const currentDirPath = dirname(currentFilePath)
 
-const postsJSONFilePath = join(currentDirPath, "../data")
+const postsJSONFilePath = join(currentDirPath, "../../data/posts.json")
 
 // 1. get all the post
 postsRouter.get('/' ,(req ,resp) =>{
@@ -58,7 +58,7 @@ postsRouter.get('/:_id' ,(req ,resp) =>{
         }
         
     } catch (error) {
-        resp.send(500).send({message: error.message});
+        resp.status(500).send({message: error.message});
         
     }
 })
